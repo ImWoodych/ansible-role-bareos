@@ -16,11 +16,11 @@
 
 - name: Add BareOS apt-key
   apt_key:
-    url: "http://download.bareos.org/bareos/release/{{ bareos_release }}/{{ bareos_os_version }}/Release.key"
+    url: "http://download.bareos.org/current/{{ bareos_os_version }}/Release.key"
 
 - name: Ensure BareOS APT repo is present
   apt_repository:
-    repo: "deb http://download.bareos.org/bareos/release/{{ bareos_release }}/{{ bareos_os_version }}/ /"
+    repo: "deb http://download.bareos.org/current/{{ bareos_os_version }}/ /"
 
 - name: Install && setup bareos client
   include_tasks: bareos_client.yml
